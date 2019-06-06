@@ -42,4 +42,5 @@ a:hover {
 /* Cards */
 .card {
   border: none;
+  background-color: #f7f8f9;
 }
