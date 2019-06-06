@@ -1,5 +1,24 @@
 /* Custom Styles */
 
+/* Typography */
+a {
+  color: #F59332;
+}
+
+a:hover {
+  color: #8c4906;
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: #F59332 !important;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #8c4906 !important;
+}
+
 /* Hero */
 .hero {
   padding-bottom: 90px;
