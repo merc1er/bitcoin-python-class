@@ -1,5 +1,11 @@
 /* Custom Styles */
 
+/* Hero */
+.hero {
+  padding-bottom: 90px;
+}
+
+/* Section Rounded */
 .section-after-wrapper {
   position: relative;
 }
