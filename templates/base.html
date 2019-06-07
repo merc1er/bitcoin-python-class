@@ -8,6 +8,9 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/static/css/custom.css">
+
     <!-- Fonts -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 
@@ -17,20 +20,39 @@
 
   <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-white mt-3">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-4">
       <div class="container">
 
         <a class="navbar-brand" href="/">
-          <img src="https://themes.getbootstrap.com/wp-content/themes/bootstrap-marketplace/assets/images/elements/bootstrap-stack.png" height="40">
+          <img src="https://sporestack.github.io/bitcash/_static/bitcash.png" height="40">
         </a>
 
-        <a href="#" class="btn btn-primary btn-lg">Buy a ticket</a>
+        <a href="#" class="btn btn-primary btn-lg">Join Now</a>
 
       </div>
     </nav>
 
     {% block body %}
     {% endblock %}
+
+    <footer class="bg-dark py-5">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-6">
+            <ul class="list-unstyled text-white">
+              <li><a href="/">Home</a></li>
+              <li>Join the class for free</li>
+            </ul>
+          </div>
+
+          <div class="col-6 text-right">
+            <!-- Right side -->
+          </div>
+
+        </div>
+      </div>
+    </footer>
 
   </body>
 </html>
