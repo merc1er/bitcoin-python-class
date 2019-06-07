@@ -44,3 +44,16 @@ a:hover {
   border: none;
   background-color: #f7f8f9;
 }
+
+/* Animations */
+.zoom-in {
+  transition-duration: .3s;
+}
+
+.zoom-in:hover {
+  transform: scale(1.3);
+}
+
+.zoom-in:active {
+  transform: scale(0.9);
+}
