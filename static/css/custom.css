@@ -9,6 +9,10 @@ a:hover {
   color: #8c4906;
 }
 
+.text-primary {
+  color: #F59332 !important;
+}
+
 /* Buttons */
 .btn-primary {
   background-color: #F59332 !important;
