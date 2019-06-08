@@ -1,4 +1,5 @@
 from flask import Flask, render_template
+from bitcash import Key
 
 
 app = Flask(__name__)
@@ -12,7 +13,14 @@ EVENT_BRIBE_LINK = '#'
 
 @app.route('/')
 def index():
-    return render_template('index.html', eb_link=EVENT_BRIBE_LINK)
+    key = Key()
+    wif = key.to_wif()
+    return render_template(
+        'index.html',
+        eb_link=EVENT_BRIBE_LINK,
+        address=key.address,
+        wif=wif,
+    )
 
 
 if __name__ == '__main__':
