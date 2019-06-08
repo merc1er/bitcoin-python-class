@@ -89,3 +89,8 @@ a:hover {
 .zoom-in:active {
   transform: scale(0.9);
 }
+
+/* QR code */
+#qrcode > img {
+  margin: 0 auto;
+}
