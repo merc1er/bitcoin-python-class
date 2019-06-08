@@ -1,30 +1,31 @@
 <section class="container pb-5">
-  <h3 class="text-center">What you will build</h3>
+  <h3 class="text-center">Build a payment processor for your website</h3>
 
-  <div class="row pt-5">
+  <div class="row pt-5 justify-content-center">
 
-    <div class="col-md-6">
+    <div class="col-sm-10 col-md-8 col-lg-6 text-center card shadow">
+      <div class="card-body">
 
-      <script src="/static/js/qrcode.js"></script>
+        <p>Send a small amount of Bitcoin Cash to the following address to try it</p>
 
-      <div id="qrcode"></div>
+        <script src="/static/js/qrcode.js"></script>
+        <a href="{{ address }}">
+          <div id="qrcode"></div>
+          <p class="text-truncate">{{ address }}</p>
+        </a>
 
-      <script type="text/javascript">
-      var qrcode = new QRCode(document.getElementById("qrcode"), {
-        text: "{{ address }}",
-        width: 128,
-        height: 128,
-        colorDark : "#000000",
-        colorLight : "#ffffff",
-        correctLevel : QRCode.CorrectLevel.M
-      });
-      </script>
+        <script type="text/javascript">
+        var qrcode = new QRCode(document.getElementById("qrcode"), {
+          text: "{{ address }}",
+          width: 128,
+          height: 128,
+          colorDark : "#000000",
+          colorLight : "#ffffff",
+          correctLevel : QRCode.CorrectLevel.M
+        });
+        </script>
 
-    </div>
-
-    <div class="col-md-6 mt-5 mt-md-0">
-      <p>A payment processor for your website</p>
-      <p class="text-truncate">{{ address }}</p>
+      </div>
     </div>
 
   </div>
