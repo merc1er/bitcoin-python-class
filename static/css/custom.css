@@ -1,6 +1,24 @@
 /* Custom Styles */
 
 /* Typography */
+@font-face {
+  font-family: 'sf-display';
+  src: url(../font/SF-Pro-Display-Regular.otf);
+}
+
+@font-face {
+  font-family: 'sf-text';
+  src: url(../font/SF-Pro-Text-Regular.otf);
+}
+
+h1, h2, h3 {
+  font-family: 'sf-display';
+}
+
+p, h4, h5, h6 {
+  font-family: 'sf-text';
+}
+
 a {
   color: #F59332;
 }
