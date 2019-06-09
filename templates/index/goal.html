@@ -1,14 +1,37 @@
 <section class="container pb-5">
-  <h3 class="text-center">What you will build</h3>
+  <h3 class="text-center">Build a payment processor for your website</h3>
 
-  <div class="row pt-5">
+  <div class="row pt-5 justify-content-center">
 
-    <div class="col-md-6 text-center">
-      <img src="https://www.bitcoincash.org/img/general-address.png" height="200" alt="QR code">
-    </div>
+    <div class="col-sm-10 col-md-8 col-lg-6 text-center card shadow">
+      <div class="card-body">
 
-    <div class="col-md-6">
-      A payment processor for your website
+        <p class="text-muted">
+          Send a small amount of Bitcoin Cash to the following address to try it!
+          <br>
+          Don't worry, you will be able to withdraw it back right after 😀
+        </p>
+
+        <i class="fas fa-circle-notch fa-spin float-right"></i>
+
+        <script src="/static/js/qrcode.js"></script>
+        <a href="{{ address }}">
+          <div id="qrcode"></div>
+          <p class="text-truncate">{{ address }}</p>
+        </a>
+
+        <script type="text/javascript">
+        var qrcode = new QRCode(document.getElementById("qrcode"), {
+          text: "{{ address }}",
+          width: 128,
+          height: 128,
+          colorDark : "#000000",
+          colorLight : "#ffffff",
+          correctLevel : QRCode.CorrectLevel.M
+        });
+        </script>
+
+      </div>
     </div>
 
   </div>
