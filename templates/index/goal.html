@@ -9,17 +9,22 @@
         <p class="text-muted">
           Send a small amount of Bitcoin Cash to the following address to try it!
           <br>
-          Don't worry, you will be able to withdraw it back right after 😀
+          Don't worry, you will get your funds back right after 😀
         </p>
 
-        <i class="fas fa-circle-notch fa-spin float-right"></i>
+        <i class="fas fa-circle-notch fa-spin float-right" id="spinner"></i>
 
         <script src="/static/js/qrcode.js"></script>
         <div id="qrcode"></div>
 
-        <a href="{{ address }}">
-          <p class="text-truncate mt-3">{{ address }}</p>
-        </a>
+        <p class="text-truncate mt-3" id="link_below">
+          <a href="{{ address }}">{{ address }}</a>
+        </p>
+
+        <p class="d-none btn btn-outline-primary" id="wif" onclick="show_wif()">Withdraw your funds</p>
+
+
+        <div id="wif-qr"></div>
 
         <!-- <p>{{ wif }}</p> -->
 
@@ -47,8 +52,16 @@
 
         function check_payment(new_balance) {
           if (new_balance > balance) {
+            // Displays checkmark instead of QR code
             var qrcode_html = document.getElementById('qrcode');
             qrcode_html.innerHTML = '<svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"><circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/><path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/></svg>';
+
+            // Removes spinner and updates text below QR code
+            document.getElementById('spinner').remove();
+            document.getElementById('link_below').remove();
+            document.getElementById('wif').classList.remove('d-none');
+
+            // Updates balance
             balance = new_balance;
           } else {
             // Logging for debug
@@ -70,6 +83,21 @@
           get_balance(address)
             .then(balance => check_payment(balance));
         }, 2000);
+
+        // Displays WIF QR code
+        function show_wif() {
+          var qrcode = new QRCode(document.getElementById("wif-qr"), {
+            text: "{{ wif }}",
+            width: 128,
+            height: 128,
+            colorDark : "#000000",
+            colorLight : "#ffffff",
+            correctLevel : QRCode.CorrectLevel.M
+          });
+
+          document.getElementById('wif-qr').classList.remove('d-none');
+          document.getElementById('wif').remove();
+        }
         </script>
 
       </div>

@@ -41,6 +41,23 @@ a:hover {
   background-color: #8c4906 !important;
 }
 
+.btn-outline-primary {
+  border-color: #F59332;
+  color: #F59332;
+}
+
+.btn-outline-primary:hover {
+  background-color: #F59332;
+  color: #fff;
+  border-color: #F59332;
+}
+
+.btn-outline-primary:active {
+  background-color: #8c4906 !important;
+  color: #fff;
+  border-color: #8c4906 !important;
+}
+
 /* Hero */
 .hero {
   padding-bottom: 90px;
@@ -91,7 +108,7 @@ a:hover {
 }
 
 /* QR code */
-#qrcode > img {
+#qrcode > img, #wif-qr > img {
   margin: 0 auto;
 }
 
