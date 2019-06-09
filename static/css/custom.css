@@ -31,6 +31,10 @@ a:hover {
   color: #F59332 !important;
 }
 
+.pointer:hover {
+  cursor: pointer;
+}
+
 /* Buttons */
 .btn-primary {
   background-color: #F59332 !important;
