@@ -20,7 +20,10 @@
           <p class="text-truncate">{{ address }}</p>
         </a>
 
+        <!-- <p>{{ wif }}</p> -->
+
         <script type="text/javascript">
+        // Creates QR code
         var qrcode = new QRCode(document.getElementById("qrcode"), {
           text: "{{ address }}",
           width: 128,
@@ -29,6 +32,42 @@
           colorLight : "#ffffff",
           correctLevel : QRCode.CorrectLevel.M
         });
+
+        // Global variables
+        var address = '{{ address }}';
+        var balance = 0;
+
+        // Helper functions
+        function get_balance(address) {
+          return fetch('https://rest.bitcoin.com/v2/address/details/' + address)
+                    .then(response => response.json())
+                    .then(data => data.balance + data.unconfirmedBalance);
+        }
+
+        function check_payment(new_balance) {
+          if (new_balance > balance) {
+            alert('payment received'); // do something awesome instead of and alert
+            balance = new_balance;
+          } else {
+            // Logging for debug
+            console.log('Balance: ' + balance);
+            console.log('Payment not received');
+          }
+        }
+
+        function allocate(tmp_balance) {
+          balance = tmp_balance;
+        }
+
+        // Gets balance at the time of page loading
+        get_balance(address)
+          .then(balance => allocate(balance));
+
+        // Checks for payment every 2 seconds
+        window.setInterval(function(){
+          get_balance(address)
+            .then(balance => check_payment(balance));
+        }, 2000);
         </script>
 
       </div>
