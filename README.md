@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://sporestack.github.io/bitcash/_static/bitcash.png" alt="BitCash logo" width="72" height="72">
+  <img src="https://pybitcash.github.io/bitcash/_static/bitcash.png" alt="BitCash logo" width="72" height="72">
 </p>
 
 <h3 align="center">
